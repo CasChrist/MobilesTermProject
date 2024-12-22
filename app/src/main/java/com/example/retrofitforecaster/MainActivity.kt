@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 val response = RetrofitClient.api.getWeatherForecast(cityName, apiKey)
                 val weatherItems = response.list.map { weather ->
                     val iconCode = weather.weather[0].icon
-                    val temperature = "${(weather.main.temp - 273.15).toInt()}°C"Рио-
+                    val temperature = "${(weather.main.temp - 273.15).toInt()}°C"
                     val dateTime = java.util.Date(weather.dt * 1000L)
                     val dateFormat = java.text.SimpleDateFormat("dd-MM-yyyy", java.util.Locale.getDefault())
                     val timeFormat = java.text.SimpleDateFormat("HH:mm", java.util.Locale.getDefault())
